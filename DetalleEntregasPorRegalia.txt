@@ -45,6 +45,8 @@ when T0.SlpCode = 42 then 'Oficina/Electromedicina'
 when T0.SlpCode = 42 then 'Francisca/Electromedicina'
 end
 ,T0.[DocDate], T0.[DocNum], T0.[CardCode], T0.[CardName] ,T1.ItemCode,T1.Dscription,t1.Quantity,T0.Comments
+,T0.DocTotal --Total en Cordobas
+,T0.DocTotalSy ---Total en dolares
  FROM ODLN T0 INNER JOIN DLN1 T1
   ON T0.[DocEntry] = T1.[DocEntry]
 where T0.DocDate between [%0] and [%1] and T0.Comments like '%_egalia%' and T1.TargetType not in ('15','16')
